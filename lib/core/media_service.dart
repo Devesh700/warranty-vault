@@ -1,8 +1,8 @@
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_image_compress/flutter_image_compress.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:google_mlkit_text_recognition/google_mlkit_text_recognition.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
@@ -73,7 +73,7 @@ class MediaService {
           );
           if (files.isEmpty) return null;
           final pdfBytes = await files.first.readAsBytes();
-          return _renderPdfFirstPage(pdfBytes);
+          return await _renderPdfFirstPage(pdfBytes);
       }
     } catch (_) {
       return null;

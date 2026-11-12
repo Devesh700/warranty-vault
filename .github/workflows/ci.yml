@@ -14,6 +14,8 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           channel: stable
+      - name: Ensure fallback .env asset exists for CI
+        run: test -f .env || cp .env.example .env
       - run: flutter pub get
       - run: flutter gen-l10n
       - run: flutter analyze

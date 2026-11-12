@@ -1,10 +1,17 @@
-import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../core/constants.dart';
 
 class AppTheme {
   AppTheme._();
+
+  static TextStyle? _applyFont(
+    TextStyle? Function({TextStyle? textStyle}) fontFn,
+    TextStyle? style,
+  ) {
+    return style == null ? null : fontFn(textStyle: style);
+  }
 
   static TextTheme _buildTextTheme(
     TextTheme base,
@@ -13,47 +20,65 @@ class AppTheme {
     bool isHindi,
   ) {
     final fontFn = isHindi
-        ? GoogleFonts.notoSansDevanagariTextTheme
-        : GoogleFonts.interTextTheme;
+        ? GoogleFonts.notoSansDevanagari
+        : GoogleFonts.inter;
 
-    return fontFn(base).copyWith(
-      headlineSmall: fontFn(base).headlineSmall?.copyWith(
+    final withFont = base.copyWith(
+      displayLarge: _applyFont(fontFn, base.displayLarge),
+      displayMedium: _applyFont(fontFn, base.displayMedium),
+      displaySmall: _applyFont(fontFn, base.displaySmall),
+      headlineLarge: _applyFont(fontFn, base.headlineLarge),
+      headlineMedium: _applyFont(fontFn, base.headlineMedium),
+      headlineSmall: _applyFont(fontFn, base.headlineSmall),
+      titleLarge: _applyFont(fontFn, base.titleLarge),
+      titleMedium: _applyFont(fontFn, base.titleMedium),
+      titleSmall: _applyFont(fontFn, base.titleSmall),
+      bodyLarge: _applyFont(fontFn, base.bodyLarge),
+      bodyMedium: _applyFont(fontFn, base.bodyMedium),
+      bodySmall: _applyFont(fontFn, base.bodySmall),
+      labelLarge: _applyFont(fontFn, base.labelLarge),
+      labelMedium: _applyFont(fontFn, base.labelMedium),
+      labelSmall: _applyFont(fontFn, base.labelSmall),
+    );
+
+    return withFont.copyWith(
+      headlineSmall: withFont.headlineSmall?.copyWith(
             fontSize: 22,
             fontWeight: FontWeight.w700,
             color: primaryText,
             height: 1.25,
           ),
-      titleLarge: fontFn(base).titleLarge?.copyWith(
+      titleLarge: withFont.titleLarge?.copyWith(
             fontSize: 22,
             fontWeight: FontWeight.w700,
             color: primaryText,
             height: 1.25,
           ),
-      titleMedium: fontFn(base).titleMedium?.copyWith(
+      titleMedium: withFont.titleMedium?.copyWith(
             fontSize: 17,
             fontWeight: FontWeight.w600,
             color: primaryText,
             height: 1.3,
           ),
-      bodyLarge: fontFn(base).bodyLarge?.copyWith(
+      bodyLarge: withFont.bodyLarge?.copyWith(
             fontSize: 15,
             fontWeight: FontWeight.w400,
             color: primaryText,
             height: 1.4,
           ),
-      bodyMedium: fontFn(base).bodyMedium?.copyWith(
+      bodyMedium: withFont.bodyMedium?.copyWith(
             fontSize: 15,
             fontWeight: FontWeight.w400,
             color: primaryText,
             height: 1.4,
           ),
-      bodySmall: fontFn(base).bodySmall?.copyWith(
+      bodySmall: withFont.bodySmall?.copyWith(
             fontSize: 12,
             fontWeight: FontWeight.w400,
             color: secondaryText,
             height: 1.35,
           ),
-      labelSmall: fontFn(base).labelSmall?.copyWith(
+      labelSmall: withFont.labelSmall?.copyWith(
             fontSize: 12,
             fontWeight: FontWeight.w500,
             color: secondaryText,
