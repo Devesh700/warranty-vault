@@ -1,0 +1,182 @@
+[
+  {
+    "brand": "Apple",
+    "serviceNumber": "1800-102-8873",
+    "website": "https://support.apple.com",
+    "claimTips": "Back up your device and disable Find My before visiting an Apple Authorized Service Provider. Carry the original invoice."
+  },
+  {
+    "brand": "Samsung",
+    "serviceNumber": "1800-407-267864",
+    "website": "https://www.samsung.com/support",
+    "claimTips": "Keep the model code and serial/IMEI number ready. For large appliances like AC, fridge, or TV, request an in-home technician visit."
+  },
+  {
+    "brand": "LG",
+    "serviceNumber": "1800-315-9999",
+    "website": "https://www.lg.com/in/support",
+    "claimTips": "LG provides onsite service for TVs, ACs, fridges, and washing machines. Keep the invoice copy ready for the technician."
+  },
+  {
+    "brand": "Sony",
+    "serviceNumber": "1800-103-7799",
+    "website": "https://www.sony.co.in/electronics/support",
+    "claimTips": "Audio products and cameras usually require visiting an authorized service center with the stamped warranty card or tax invoice."
+  },
+  {
+    "brand": "Whirlpool",
+    "serviceNumber": "1800-208-1800",
+    "website": "https://www.whirlpoolindia.com/support",
+    "claimTips": "Note the serial sticker on the back or inside door of the appliance before booking a doorstep inspection."
+  },
+  {
+    "brand": "Bosch",
+    "serviceNumber": "1800-266-1880",
+    "website": "https://www.bosch-home.in/service",
+    "claimTips": "Have the E-Nr (model number) from the rating plate ready when calling for washing machine or dishwasher support."
+  },
+  {
+    "brand": "IFB",
+    "serviceNumber": "1800-3000-5678",
+    "website": "https://www.ifbappliances.com/customer-support",
+    "claimTips": "Keep your purchase invoice handy. Technicians verify installation date and invoice date for warranty eligibility."
+  },
+  {
+    "brand": "Voltas",
+    "serviceNumber": "1860-599-4555",
+    "website": "https://www.voltas.com/pages/customer-care",
+    "claimTips": "For AC compressor extended warranties, retain proof of periodic servicing if applicable."
+  },
+  {
+    "brand": "Daikin",
+    "serviceNumber": "1860-180-3900",
+    "website": "https://www.daikinindia.com/customer-care",
+    "claimTips": "Share the indoor and outdoor unit serial numbers along with your invoice when logging a service ticket."
+  },
+  {
+    "brand": "Blue Star",
+    "serviceNumber": "1800-209-1177",
+    "website": "https://www.bluestarindia.com/customer-care",
+    "claimTips": "Keep the GST invoice ready to confirm installation and purchase dates."
+  },
+  {
+    "brand": "Godrej",
+    "serviceNumber": "1800-209-5511",
+    "website": "https://www.godrej.com/godrej-appliances/customer-care",
+    "claimTips": "Take a short video of cooling or noise issues before the technician arrives."
+  },
+  {
+    "brand": "Haier",
+    "serviceNumber": "1800-419-9999",
+    "website": "https://www.haier.com/in/service-support",
+    "claimTips": "Register the complaint via phone or website with the product serial number and invoice date."
+  },
+  {
+    "brand": "Panasonic",
+    "serviceNumber": "1800-103-1333",
+    "website": "https://www.panasonic.com/in/support.html",
+    "claimTips": "Carry the invoice and accessories when visiting a center for small appliances; larger appliances qualify for home visit."
+  },
+  {
+    "brand": "Philips",
+    "serviceNumber": "1800-102-2929",
+    "website": "https://www.philips.co.in/c-w/support-home",
+    "claimTips": "Most personal care and kitchen appliances offer carry-in replacement or repair with the original bill."
+  },
+  {
+    "brand": "OnePlus",
+    "serviceNumber": "1800-102-8411",
+    "website": "https://service.oneplus.com",
+    "claimTips": "Back up data and remove SIM cards before submitting your phone or audio device at an authorized service center."
+  },
+  {
+    "brand": "Xiaomi",
+    "serviceNumber": "1800-103-6286",
+    "website": "https://www.mi.com/in/service/support",
+    "claimTips": "Keep the IMEI/serial number and invoice ready; book a prior appointment at Mi Service Center to save wait time."
+  },
+  {
+    "brand": "Realme",
+    "serviceNumber": "1800-102-2777",
+    "website": "https://www.realme.com/in/support",
+    "claimTips": "Bring the original GST bill and box/IMEI details for warranty verification."
+  },
+  {
+    "brand": "Dell",
+    "serviceNumber": "1800-425-4002",
+    "website": "https://www.dell.com/support",
+    "claimTips": "Locate the 7-character Service Tag on the bottom of your laptop for instant warranty lookup and onsite dispatch."
+  },
+  {
+    "brand": "HP",
+    "serviceNumber": "1800-258-7170",
+    "website": "https://support.hp.com",
+    "claimTips": "Have the product Serial Number (S/N) ready; if warranty dates differ online, share your invoice to get it updated."
+  },
+  {
+    "brand": "Lenovo",
+    "serviceNumber": "1800-419-7555",
+    "website": "https://support.lenovo.com",
+    "claimTips": "Keep your machine type and serial number handy. Lenovo accepts invoice upload to adjust warranty start date."
+  },
+  {
+    "brand": "Asus",
+    "serviceNumber": "1800-209-0365",
+    "website": "https://www.asus.com/support",
+    "claimTips": "Run MyASUS diagnostics and save any error codes before calling or visiting a service center."
+  },
+  {
+    "brand": "JBL",
+    "serviceNumber": "1800-102-0525",
+    "website": "https://support.jbl.com",
+    "claimTips": "Harman service centers require the serial number on the product and a clear copy of the retailer invoice."
+  },
+  {
+    "brand": "Bose",
+    "serviceNumber": "1800-102-2673",
+    "website": "https://www.bose.com/support",
+    "claimTips": "Check the 4-digit DOM / serial code on the product and keep your authorized dealer receipt."
+  },
+  {
+    "brand": "Dyson",
+    "serviceNumber": "1800-258-6688",
+    "website": "https://www.dyson.in/support",
+    "claimTips": "Dyson offers video-assisted troubleshooting and doorstep pickup/replacement during warranty."
+  },
+  {
+    "brand": "Bajaj",
+    "serviceNumber": "022-4128-0000",
+    "website": "https://www.bajajelectricals.com/customer-care",
+    "claimTips": "For mixer grinders, irons, and fans, keep the bill and check if doorstep service applies in your city."
+  },
+  {
+    "brand": "Prestige",
+    "serviceNumber": "1800-123-3344",
+    "website": "https://shop.ttkprestige.com/service-center",
+    "claimTips": "Visit the nearest Prestige Xclusive or authorized center with your purchase bill."
+  },
+  {
+    "brand": "Honda",
+    "serviceNumber": "1800-103-3434",
+    "website": "https://www.honda2wheelersindia.com",
+    "claimTips": "Keep your service booklet and scheduled free-service records alongside the purchase invoice."
+  },
+  {
+    "brand": "Hero",
+    "serviceNumber": "1800-266-0018",
+    "website": "https://www.heromotocorp.com",
+    "claimTips": "Warranty claims require timely periodic services recorded at authorized dealerships."
+  },
+  {
+    "brand": "TVS",
+    "serviceNumber": "1800-258-7555",
+    "website": "https://www.tvsmotor.com",
+    "claimTips": "Carry your RC, owner's manual, and purchase invoice to the authorized TVS service center."
+  },
+  {
+    "brand": "IKEA",
+    "serviceNumber": "1800-419-4532",
+    "website": "https://www.ikea.com/in/en/customer-service",
+    "claimTips": "Keep your IKEA bill or order number; take clear photos of the defect before contacting support."
+  }
+]

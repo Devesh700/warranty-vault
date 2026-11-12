@@ -1,0 +1,281 @@
+{
+  "@@locale": "en",
+  "appName": "WarrantyVault",
+  "tabItems": "Items",
+  "tabExpiring": "Expiring",
+  "tabSettings": "Settings",
+  "addItem": "Add item",
+  "editItem": "Edit item",
+  "searchHint": "Search items, brands, stores...",
+  "itemsSummary": "{count, plural, =0{No items} =1{1 item} other{{count} items}}, {expiringCount} expiring soon",
+  "@itemsSummary": {
+    "placeholders": {
+      "count": { "type": "int" },
+      "expiringCount": { "type": "int" }
+    }
+  },
+  "filterAll": "All",
+  "statusActive": "Active",
+  "statusExpiringSoon": "Expiring Soon",
+  "statusExpired": "Expired",
+  "statusNoWarranty": "No warranty",
+  "statusLifetime": "Lifetime",
+  "daysLeft": "{days, plural, =0{Expires today} =1{1 day left} other{{days} days left}}",
+  "@daysLeft": {
+    "placeholders": {
+      "days": { "type": "int" }
+    }
+  },
+  "expiredDaysAgo": "{days, plural, =1{Expired 1 day ago} other{Expired {days} days ago}}",
+  "@expiredDaysAgo": {
+    "placeholders": {
+      "days": { "type": "int" }
+    }
+  },
+  "emptyItemsHeadline": "No items yet. Add your first bill in 20 seconds.",
+  "emptyItemsHelp": "Store bills, track warranties, and get timely reminders.",
+  "emptyFilteredHeadline": "No matching items",
+  "emptyFilteredHelp": "Try clearing your search or changing the filter.",
+  "emptyExpiringHeadline": "Nothing expiring soon. You're covered.",
+  "emptyExpiringHelp": "Items expiring in the next 90 days appear here.",
+  "clearFilters": "Clear filters",
+  "loadingLabel": "Loading...",
+  "genericErrorHeadline": "Something went wrong",
+  "genericErrorHelp": "Please try again in a moment.",
+  "retry": "Retry",
+  "categoryPhone": "Phone",
+  "categoryLaptop": "Laptop",
+  "categoryTv": "TV",
+  "categoryAc": "AC",
+  "categoryFridge": "Fridge",
+  "categoryWashingMachine": "Washing machine",
+  "categoryKitchenAppliance": "Kitchen appliance",
+  "categoryAudio": "Audio",
+  "categoryVehicle": "Vehicle",
+  "categoryFurniture": "Furniture",
+  "categoryOther": "Other",
+  "thisWeek": "This week",
+  "thisMonth": "This month",
+  "next3Months": "Next 3 months",
+  "extendWarranty": "Extend warranty",
+  "extendYourWarranty": "Extend your {product} warranty",
+  "@extendYourWarranty": {
+    "placeholders": {
+      "product": { "type": "String" }
+    }
+  },
+  "sponsoredLabel": "Sponsored",
+  "affiliatePlaceholderNote": "Partner extended warranty offers are coming soon. Links will appear here once enabled.",
+  "comingSoon": "Coming soon",
+  "settingsSectionReminders": "Reminders",
+  "settingsSectionAppearance": "Appearance",
+  "settingsSectionLanguage": "Language",
+  "settingsSectionSecurity": "Security",
+  "settingsSectionData": "Data",
+  "settingsSectionSubscription": "Subscription",
+  "settingsSectionAbout": "About",
+  "themeSystem": "System",
+  "themeLight": "Light",
+  "themeDark": "Dark",
+  "languageSystem": "System default",
+  "languageEnglish": "English",
+  "languageHindi": "हिन्दी (Hindi)",
+  "reminderTimeLabel": "Reminder time",
+  "appLockLabel": "App lock (PIN / Biometrics)",
+  "exportAllData": "Export all data (ZIP)",
+  "deleteAllData": "Delete all data",
+  "subscriptionStatusFree": "Free plan (up to 5 items)",
+  "subscriptionStatusPro": "WarrantyVault Pro",
+  "manageSubscription": "Manage subscription",
+  "restorePurchases": "Restore purchases",
+  "privacyPolicy": "Privacy policy",
+  "termsOfService": "Terms of service",
+  "appVersion": "Version",
+  "contactSupport": "Contact support",
+  "rateApp": "Rate app",
+  "deleteItemUndo": "Deleted \"{name}\"",
+  "@deleteItemUndo": {
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+  "undo": "Undo",
+  "save": "Save",
+  "cancel": "Cancel",
+  "delete": "Delete",
+  "edit": "Edit",
+  "close": "Close",
+  "somethingBroke": "Something broke?",
+  "verifyContactDisclaimer": "Verify contact details with the brand before calling.",
+  "fieldProductName": "Product name",
+  "fieldProductNameHint": "e.g. Samsung Split AC 1.5T",
+  "fieldProductNameRequired": "Please enter a product name",
+  "fieldBrand": "Brand",
+  "fieldBrandHint": "e.g. Samsung, LG, Apple",
+  "fieldCategory": "Category",
+  "fieldPurchaseDate": "Purchase date",
+  "futureDateError": "Purchase date cannot be in the future",
+  "fieldWarrantyPeriod": "Warranty period",
+  "monthsCount": "{months, plural, =0{0 months (No warranty)} =1{1 month} other{{months} months}}",
+  "@monthsCount": {
+    "placeholders": {
+      "months": { "type": "int" }
+    }
+  },
+  "lifetimeWarranty": "Lifetime warranty",
+  "fieldPrice": "Price (optional)",
+  "fieldPriceHint": "e.g. 42999",
+  "invalidPriceError": "Enter a valid positive amount",
+  "fieldStore": "Store / Seller",
+  "fieldStoreHint": "e.g. Croma, Amazon",
+  "moreDetails": "More details",
+  "fieldModel": "Model number",
+  "fieldSerialNumber": "Serial / IMEI number",
+  "fieldNotes": "Notes",
+  "fieldNotesHint": "Any extra details or accessories included",
+  "warrantyPreviewTitle": "Warranty preview",
+  "warrantyEndsOn": "Ends on {date}",
+  "@warrantyEndsOn": {
+    "placeholders": {
+      "date": { "type": "String" }
+    }
+  },
+  "extendedWarrantyEndLabel": "Extended warranty end",
+  "addExtendedWarranty": "Add extended warranty date",
+  "itemSavedTitle": "Item saved!",
+  "remindersSetFor": "Reminders set before {date}",
+  "@remindersSetFor": {
+    "placeholders": {
+      "date": { "type": "String" }
+    }
+  },
+  "noRemindersNeeded": "No expiry reminders needed for this item.",
+  "viewItem": "View item",
+  "addAnother": "Add another",
+  "addAnotherFromBill": "Add another item from this bill",
+  "resumeDraftMessage": "You have an unsaved item draft.",
+  "resumeDraft": "Resume draft",
+  "discard": "Discard",
+  "confirmDeleteTitle": "Delete item?",
+  "confirmDeleteBody": "This will remove \"{name}\" and its reminders from this device.",
+  "@confirmDeleteBody": {
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+  "itemNotFound": "Item not found",
+  "autoFilledTag": "auto-filled",
+  "addAnotherPhoto": "Add another photo",
+  "notificationChannelName": "Warranty reminders",
+  "notif30Days": "Your {product} warranty ends in 30 days. Check if anything needs fixing.",
+  "@notif30Days": {
+    "placeholders": {
+      "product": { "type": "String" }
+    }
+  },
+  "notif7Days": "{product} warranty ends in 7 days. Last chance for free service.",
+  "@notif7Days": {
+    "placeholders": {
+      "product": { "type": "String" }
+    }
+  },
+  "notif1Day": "{product} warranty ends tomorrow.",
+  "@notif1Day": {
+    "placeholders": {
+      "product": { "type": "String" }
+    }
+  },
+  "onboardingTitle1": "Never lose a bill again",
+  "onboardingBody1": "Snap a photo or import a PDF. All data stays private on your device.",
+  "onboardingTitle2": "Get reminded before warranty ends",
+  "onboardingBody2": "Timely alerts at 30, 7, and 1 day before expiry so you never miss free service.",
+  "onboardingTitle3": "Ready when something breaks",
+  "onboardingBody3": "One-tap brand service contacts and a ready-to-share claim PDF bundle.",
+  "onboardingNotificationReason": "Allow notifications so WarrantyVault can alert you before warranties expire.",
+  "skip": "Skip",
+  "next": "Next",
+  "getStarted": "Get started",
+  "addSourceTitle": "Add a purchase",
+  "sourceScanBill": "Scan bill (camera)",
+  "sourceChoosePhoto": "Choose photo",
+  "sourceImportPdf": "Import PDF",
+  "sourceEnterManually": "Enter manually",
+  "reviewBillImage": "Review bill",
+  "retake": "Retake",
+  "useThis": "Use this",
+  "scanningBill": "Reading bill details...",
+  "ocrNoTextWarning": "Couldn't read text clearly. You can fill in the details manually.",
+  "attachmentBill": "Bill",
+  "attachmentWarrantyCard": "Warranty card",
+  "attachmentProductPhoto": "Product photo",
+  "attachmentOther": "Other",
+  "chooseAttachmentType": "Photo type",
+  "share": "Share",
+  "storageError": "Could not save image. Your form details are safe—please try again.",
+  "keepUnmodifiedCopy": "Keep unmodified original bill copy",
+  "attachmentsCount": "{count, plural, =1{1 attachment} other{{count} attachments}}",
+  "@attachmentsCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "underWarrantyUntil": "Under warranty until {date}",
+  "@underWarrantyUntil": {
+    "placeholders": {
+      "date": { "type": "String" }
+    }
+  },
+  "warrantyExpiredBanner": "Warranty expired",
+  "goodwillRepairNote": "Some brands still offer goodwill or paid repairs—check before replacing.",
+  "lifetimeWarrantyBanner": "Covered under lifetime warranty",
+  "noWarrantyBanner": "No warranty recorded",
+  "brandServiceTitle": "Brand service support",
+  "callSupport": "Call {number}",
+  "@callSupport": {
+    "placeholders": {
+      "number": { "type": "String" }
+    }
+  },
+  "visitWebsite": "Visit support website",
+  "claimTipsLabel": "Claim tips",
+  "noBrandMatchHelp": "No saved contact for this brand yet. Browse supported brands below.",
+  "chooseBrandContact": "Browse brand directory",
+  "shareClaimBundle": "Share claim bundle (PDF)",
+  "generatingPdf": "Preparing PDF...",
+  "claimChecklistTitle": "Before you contact support",
+  "checklistBillSerial": "Keep your bill and serial number ready",
+  "checklistIssuePhoto": "Note the issue and take a photo or video",
+  "compareRepairPlans": "Compare repair-protection plans",
+  "notifPermissionDeniedBanner": "Warranty reminders are paused. Enable notifications so you don't miss expiry alerts.",
+  "enable": "Enable",
+  "paywallHeadline": "Keep every bill safe, forever",
+  "paywallBenefitUnlimited": "Unlimited items & bills",
+  "paywallBenefitBackup": "Encrypted cloud backup",
+  "paywallBenefitFamily": "Family vault sharing",
+  "paywallBenefitSupport": "Priority support",
+  "planYearly": "Yearly",
+  "planMonthly": "Monthly",
+  "bestValue": "Best value",
+  "freeTrial7Days": "7-day free trial included",
+  "priceUnavailableOffline": "Connect to the internet to load store pricing",
+  "continueButton": "Continue",
+  "purchaseRestored": "Subscription restored!",
+  "noActiveSubscription": "No active subscription found.",
+  "purchaseSuccess": "Welcome to WarrantyVault Pro!",
+  "purchaseNotConfigured": "Store billing is not configured in this build.",
+  "remind30DaysToggle": "30 days before expiry",
+  "remind7DaysToggle": "7 days before expiry",
+  "remind1DayToggle": "1 day before expiry",
+  "deleteAllConfirmTitle": "Delete all data?",
+  "deleteAllConfirmBody": "This permanently erases all items, bill photos, reminders, and settings from this device.",
+  "allDataDeleted": "All data deleted.",
+  "exportingData": "Creating ZIP export...",
+  "exportSuccess": "Export ready to share.",
+  "unlockTitle": "WarrantyVault is locked",
+  "unlockButton": "Unlock",
+  "unlockReason": "Authenticate to access your WarrantyVault bills",
+  "cloudBackupTitle": "Cloud backup",
+  "familyVaultTitle": "Family vault",
+  "upgradeToPro": "Upgrade to Pro",
+  "localOnlyBadge": "100% on-device • Private"
+}
