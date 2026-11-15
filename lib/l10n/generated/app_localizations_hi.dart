@@ -494,6 +494,9 @@ class AppLocalizationsHi extends AppLocalizations {
   String get retake => 'फिर से लें';
 
   @override
+  String get crop => 'क्रॉप करें';
+
+  @override
   String get useThis => 'इसे उपयोग करें';
 
   @override

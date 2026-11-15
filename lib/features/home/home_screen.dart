@@ -8,6 +8,7 @@ import '../../core/date_logic.dart';
 import '../../core/fcm_service.dart';
 import '../../core/firebase_sync_service.dart';
 import '../../core/l10n_helpers.dart';
+import '../../core/media_service.dart';
 import '../../core/notification_service.dart';
 import '../../core/widgets/empty_state.dart';
 import '../../core/widgets/item_card.dart';
@@ -15,6 +16,7 @@ import '../../core/widgets/state_views.dart';
 import '../../data/providers.dart';
 import '../../domain/enums.dart';
 import '../../domain/models.dart';
+import '../add_item/add_source_sheet.dart';
 import '../../l10n/generated/app_localizations.dart';
 
 enum StatusFilter { all, active, expiringSoon, expired }
@@ -46,6 +48,26 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     super.initState();
     _checkDraft();
     _checkNotificationPermission();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _checkLostData();
+    });
+  }
+
+  Future<void> _checkLostData() async {
+    if (kIsWeb) return;
+    try {
+      final lostData = await ref.read(mediaServiceProvider).retrieveLostData();
+      if (lostData != null && mounted) {
+        await Navigator.of(context).push(
+          MaterialPageRoute<void>(
+            builder: (_) => BillCapturePreviewScreen(
+              pickedSource: lostData,
+              source: CaptureSource.camera,
+            ),
+          ),
+        );
+      }
+    } catch (_) {}
   }
 
   Future<void> _checkDraft() async {

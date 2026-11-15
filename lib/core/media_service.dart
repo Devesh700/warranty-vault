@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_image_compress/flutter_image_compress.dart';
@@ -45,11 +47,29 @@ class MediaService {
   final ImagePicker _picker = ImagePicker();
   static const _uuid = Uuid();
 
+  Future<PickedBillSource?> retrieveLostData() async {
+    if (kIsWeb) return null;
+    try {
+      final response = await _picker.retrieveLostData();
+      if (response.isEmpty || response.file == null) return null;
+      final file = response.file!;
+      final bytes = await file.readAsBytes();
+      return PickedBillSource(displayPathOrUri: file.path, bytes: bytes);
+    } catch (_) {
+      return null;
+    }
+  }
+
   Future<PickedBillSource?> pickSourceFile(CaptureSource source) async {
     try {
       switch (source) {
         case CaptureSource.camera:
-          final file = await _picker.pickImage(source: ImageSource.camera);
+          final file = await _picker.pickImage(
+            source: ImageSource.camera,
+            maxWidth: AppLimits.maxImageLongSide.toDouble(),
+            maxHeight: AppLimits.maxImageLongSide.toDouble(),
+            imageQuality: AppLimits.imageQuality,
+          );
           if (file == null) return null;
           final bytes = await file.readAsBytes();
           final display = kIsWeb
@@ -58,7 +78,12 @@ class MediaService {
           return PickedBillSource(displayPathOrUri: display, bytes: bytes);
 
         case CaptureSource.gallery:
-          final file = await _picker.pickImage(source: ImageSource.gallery);
+          final file = await _picker.pickImage(
+            source: ImageSource.gallery,
+            maxWidth: AppLimits.maxImageLongSide.toDouble(),
+            maxHeight: AppLimits.maxImageLongSide.toDouble(),
+            imageQuality: AppLimits.imageQuality,
+          );
           if (file == null) return null;
           final bytes = await file.readAsBytes();
           final display = kIsWeb
@@ -87,9 +112,17 @@ class MediaService {
       doc = await PdfDocument.openData(pdfBytes);
       if (doc.pagesCount < 1) return null;
       page = await doc.getPage(1);
+      double targetWidth = page.width * 2;
+      double targetHeight = page.height * 2;
+      final maxDim = math.max(targetWidth, targetHeight);
+      if (maxDim > AppLimits.maxImageLongSide) {
+        final scale = AppLimits.maxImageLongSide / maxDim;
+        targetWidth *= scale;
+        targetHeight *= scale;
+      }
       final pageImage = await page.render(
-        width: page.width * 2,
-        height: page.height * 2,
+        width: targetWidth,
+        height: targetHeight,
         format: PdfPageImageFormat.png,
         backgroundColor: '#FFFFFF',
       );

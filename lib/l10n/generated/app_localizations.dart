@@ -944,6 +944,12 @@ abstract class AppLocalizations {
   /// **'Retake'**
   String get retake;
 
+  /// No description provided for @crop.
+  ///
+  /// In en, this message translates to:
+  /// **'Crop'**
+  String get crop;
+
   /// No description provided for @useThis.
   ///
   /// In en, this message translates to:

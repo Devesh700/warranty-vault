@@ -202,6 +202,7 @@
   "sourceEnterManually": "Enter manually",
   "reviewBillImage": "Review bill",
   "retake": "Retake",
+  "crop": "Crop",
   "useThis": "Use this",
   "scanningBill": "Reading bill details...",
   "ocrNoTextWarning": "Couldn't read text clearly. You can fill in the details manually.",

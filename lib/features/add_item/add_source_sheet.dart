@@ -117,16 +117,10 @@ Future<void> showAddItemSourceSheet(BuildContext context) async {
   final picked = await media.pickSourceFile(source);
   if (!context.mounted || picked == null) return;
 
-  final cropped = await media.cropImage(
-    picked,
-    primaryColor: theme.colorScheme.primary,
-  );
-  if (!context.mounted) return;
-
   await Navigator.of(context).push(
     MaterialPageRoute<void>(
       builder: (_) => BillCapturePreviewScreen(
-        pickedSource: cropped,
+        pickedSource: picked,
         source: source,
       ),
     ),
@@ -163,8 +157,13 @@ class _BillCapturePreviewScreenState
     final media = ref.read(mediaServiceProvider);
     final newPicked = await media.pickSourceFile(widget.source);
     if (!mounted || newPicked == null) return;
+    setState(() => _currentSource = newPicked);
+  }
+
+  Future<void> _crop() async {
+    final media = ref.read(mediaServiceProvider);
     final cropped = await media.cropImage(
-      newPicked,
+      _currentSource,
       primaryColor: Theme.of(context).colorScheme.primary,
     );
     if (!mounted) return;
@@ -211,7 +210,16 @@ class _BillCapturePreviewScreenState
     final theme = Theme.of(context);
 
     return Scaffold(
-      appBar: AppBar(title: Text(l10n.reviewBillImage)),
+      appBar: AppBar(
+        title: Text(l10n.reviewBillImage),
+        actions: [
+          IconButton(
+            tooltip: l10n.crop,
+            icon: const Icon(Icons.crop),
+            onPressed: _isProcessing ? null : _crop,
+          ),
+        ],
+      ),
       body: _isProcessing
           ? Center(
               child: Column(
@@ -250,7 +258,13 @@ class _BillCapturePreviewScreenState
                             onPressed: _retake,
                           ),
                         ),
-                        const SizedBox(width: 12),
+                        const SizedBox(width: 8),
+                        IconButton.filledTonal(
+                          tooltip: l10n.crop,
+                          icon: const Icon(Icons.crop),
+                          onPressed: _crop,
+                        ),
+                        const SizedBox(width: 8),
                         Expanded(
                           child: PrimaryButton(
                             label: l10n.useThis,

@@ -493,6 +493,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get retake => 'Retake';
 
   @override
+  String get crop => 'Crop';
+
+  @override
   String get useThis => 'Use this';
 
   @override
