@@ -46,4 +46,5 @@ app.*.map.json
 
 # Local environment secrets
 .env
+assets/env
 google-services.json

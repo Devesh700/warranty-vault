@@ -41,13 +41,16 @@ jobs:
           printf "FIREBASE_IOS_APP_ID=%s\n" "$FIREBASE_IOS_APP_ID" >> .env
           printf "RC_ANDROID_KEY=%s\n" "$RC_ANDROID_KEY" >> .env
           printf "RC_IOS_KEY=%s\n" "$RC_IOS_KEY" >> .env
+          mkdir -p assets
+          cp .env assets/env
       - name: Verify .env configuration
         run: |
           echo "Verifying .env file presence and keys:"
           ls -la .env
+          ls -la assets/env
           grep -v '^#' .env | awk -F'=' '{if ($2 != "") print $1 "= [CONFIGURED]"; else print $1 "= [EMPTY]"}'
       - run: flutter pub get
-      - run: flutter build apk --release
+      - run: flutter build apk --release --dart-define-from-file=.env
       - uses: actions/upload-artifact@v4
         with:
           name: release-apk

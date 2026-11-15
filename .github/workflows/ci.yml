@@ -15,7 +15,10 @@ jobs:
         with:
           channel: stable
       - name: Ensure fallback .env asset exists for CI
-        run: test -f .env || cp .env.example .env
+        run: |
+          test -f .env || cp .env.example .env
+          mkdir -p assets
+          test -f assets/env || cp .env.example assets/env
       - run: flutter pub get
       - run: flutter gen-l10n
       - run: flutter analyze

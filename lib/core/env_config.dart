@@ -18,9 +18,14 @@ class EnvConfig {
     if (_loaded) return;
     _loaded = true;
     try {
+      await dotenv.load(fileName: 'assets/env');
+      return;
+    } catch (_) {}
+    try {
       await dotenv.load(fileName: '.env');
+      return;
     } catch (_) {
-      // Safe fallback in tests or environments without .env bundled
+      // Safe fallback when values are supplied via --dart-define-from-file or in tests
     }
   }
 
