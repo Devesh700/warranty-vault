@@ -7,7 +7,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment: ENV_FILE  # <-- 1. Add this line matching your GitHub Environment name
+    environment: ENV_FILE  # Connects this job to your "ENV_FILE" GitHub Environment
     steps:
       - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
@@ -15,8 +15,24 @@ jobs:
           channel: 'stable'
       - name: Create .env file
         env:
-          ENV_FILE_CONTENT: ${{ secrets.ENV_FILE }}
-        run: printf "%s\n" "$ENV_FILE_CONTENT" > .env
+          FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY }}
+          FIREBASE_AUTH_DOMAIN: ${{ secrets.FIREBASE_AUTH_DOMAIN }}
+          FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
+          FIREBASE_STORAGE_BUCKET: ${{ secrets.FIREBASE_STORAGE_BUCKET }}
+          FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.FIREBASE_MESSAGING_SENDER_ID }}
+          FIREBASE_APP_ID: ${{ secrets.FIREBASE_APP_ID }}
+          FIREBASE_MEASUREMENT_ID: ${{ secrets.FIREBASE_MEASUREMENT_ID }}
+          FIREBASE_VAPID_KEY: ${{ secrets.FIREBASE_VAPID_KEY }}
+          # Add your remaining 5 secret names here in the exact same format
+        run: |
+          printf "FIREBASE_API_KEY=%s\n" "$FIREBASE_API_KEY" > .env
+          printf "FIREBASE_AUTH_DOMAIN=%s\n" "$FIREBASE_AUTH_DOMAIN" >> .env
+          printf "FIREBASE_PROJECT_ID=%s\n" "$FIREBASE_PROJECT_ID" >> .env
+          printf "FIREBASE_STORAGE_BUCKET=%s\n" "$FIREBASE_STORAGE_BUCKET" >> .env
+          printf "FIREBASE_MESSAGING_SENDER_ID=%s\n" "$FIREBASE_MESSAGING_SENDER_ID" >> .env
+          printf "FIREBASE_APP_ID=%s\n" "$FIREBASE_APP_ID" >> .env
+          printf "FIREBASE_MEASUREMENT_ID=%s\n" "$FIREBASE_MEASUREMENT_ID" >> .env
+          printf "FIREBASE_VAPID_KEY=%s\n" "$FIREBASE_VAPID_KEY" >> .env
       - run: flutter pub get
       - run: flutter build apk --release
       - uses: actions/upload-artifact@v4
