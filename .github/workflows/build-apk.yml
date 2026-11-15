@@ -7,15 +7,16 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: ENV_FILE  # <-- 1. Add this line matching your GitHub Environment name
     steps:
       - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
-      # - name: Ensure fallback .env asset exists for CI
-      #   run: test -f .env || cp .env.example .env
       - name: Create .env file
-        run: echo "${{ secrets.ENV_FILE }}" > .env
+        env:
+          ENV_FILE_CONTENT: ${{ secrets.ENV_FILE }}
+        run: printf "%s\n" "$ENV_FILE_CONTENT" > .env
       - run: flutter pub get
       - run: flutter build apk --release
       - uses: actions/upload-artifact@v4
