@@ -3,11 +3,12 @@ name: Build Flutter APK
 on:
   push:
     branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment: ENV_FILE  # Connects this job to your "ENV_FILE" GitHub Environment
+    environment: ENV_FILE
     steps:
       - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
@@ -23,7 +24,10 @@ jobs:
           FIREBASE_APP_ID: ${{ secrets.FIREBASE_APP_ID }}
           FIREBASE_MEASUREMENT_ID: ${{ secrets.FIREBASE_MEASUREMENT_ID }}
           FIREBASE_VAPID_KEY: ${{ secrets.FIREBASE_VAPID_KEY }}
-          # Add your remaining 5 secret names here in the exact same format
+          FIREBASE_ANDROID_APP_ID: ${{ secrets.FIREBASE_ANDROID_APP_ID }}
+          FIREBASE_IOS_APP_ID: ${{ secrets.FIREBASE_IOS_APP_ID }}
+          RC_ANDROID_KEY: ${{ secrets.RC_ANDROID_KEY }}
+          RC_IOS_KEY: ${{ secrets.RC_IOS_KEY }}
         run: |
           printf "FIREBASE_API_KEY=%s\n" "$FIREBASE_API_KEY" > .env
           printf "FIREBASE_AUTH_DOMAIN=%s\n" "$FIREBASE_AUTH_DOMAIN" >> .env
@@ -33,6 +37,15 @@ jobs:
           printf "FIREBASE_APP_ID=%s\n" "$FIREBASE_APP_ID" >> .env
           printf "FIREBASE_MEASUREMENT_ID=%s\n" "$FIREBASE_MEASUREMENT_ID" >> .env
           printf "FIREBASE_VAPID_KEY=%s\n" "$FIREBASE_VAPID_KEY" >> .env
+          printf "FIREBASE_ANDROID_APP_ID=%s\n" "$FIREBASE_ANDROID_APP_ID" >> .env
+          printf "FIREBASE_IOS_APP_ID=%s\n" "$FIREBASE_IOS_APP_ID" >> .env
+          printf "RC_ANDROID_KEY=%s\n" "$RC_ANDROID_KEY" >> .env
+          printf "RC_IOS_KEY=%s\n" "$RC_IOS_KEY" >> .env
+      - name: Verify .env configuration
+        run: |
+          echo "Verifying .env file presence and keys:"
+          ls -la .env
+          grep -v '^#' .env | awk -F'=' '{if ($2 != "") print $1 "= [CONFIGURED]"; else print $1 "= [EMPTY]"}'
       - run: flutter pub get
       - run: flutter build apk --release
       - uses: actions/upload-artifact@v4

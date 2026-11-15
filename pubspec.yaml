@@ -99,6 +99,7 @@ flutter:
     - assets/data/brand_contacts.json
     - assets/images/warranty_vault_logo.png
     - .env
+    - .env
 
   # To add assets to your application, add an assets section, like this:
   # assets:
